@@ -1,0 +1,4 @@
+node_modules/
+dist/
+# local archive of the first version (its asset paths no longer resolve)
+v1/

@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Latera — Luxury Turnkey Homes, Kerala</title>
+  <meta name="description" content="Latera designs and builds monsoon-grade luxury homes across all 14 districts of Kerala. One accountable team, a BOQ-locked price, and an instant estimate in 60 seconds.">
+  <meta name="theme-color" content="#faf7f1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2314120f'/%3E%3Cpath d='M6 17 16 8l10 9' fill='none' stroke='%23e8a93a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='9' y='17' width='14' height='8' fill='%23c2502a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,500,301,401&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="./assets/video/hero.jpg">
+</head>
+<body class="is-loading">
+
+<!-- ================= LOADER ================= -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <svg class="loader__draw" viewBox="0 0 640 300" fill="none">
+      <path pathLength="1" d="M20 270 H620"/>
+      <path pathLength="1" d="M70 270 V150 M570 270 V150 M70 150 H570"/>
+      <path pathLength="1" d="M40 156 L190 70 L320 120 L450 70 L600 156"/>
+      <path pathLength="1" d="M190 70 L190 40 L450 40 L450 70"/>
+      <path pathLength="1" d="M120 270 V190 H200 V270 M260 270 V180 H380 V270 M440 270 V190 H520 V270"/>
+      <path pathLength="1" d="M300 270 V210 H340 V270"/>
+      <path pathLength="1" d="M60 270 V282 H580 V270"/>
+    </svg>
+    <div class="loader__ml" lang="ml">വീട്</div>
+    <div class="loader__row"><span class="mono" id="loaderMsg">Surveying the plot</span><span class="loader__count" id="loaderCount">0</span></div>
+  </div>
+  <div class="curtain curtain--a"></div><div class="curtain curtain--b"></div><div class="curtain curtain--c"></div>
+</div>
+
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><em></em></span></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Latera home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path class="brand__roof" d="M4 16 16 6l12 10"/><rect class="brand__base" x="8" y="16" width="16" height="10" rx="1"/></svg>
+    <span>Latera</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#process">Method</a>
+    <a href="#kerala">Kerala</a>
+    <a href="#services">Services</a>
+    <a href="#work">Residences</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="nav__right">
+    <a href="tel:+919847000000" class="nav__tel mono">+91 98470 00000</a>
+    <a href="#quote" class="btn btn--ink btn--sm magnetic" data-cursor="Quote"><span>Instant quote</span><i class="btn__ico"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></i></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#process"><small class="mono">01</small>Method</a>
+    <a href="#kerala"><small class="mono">02</small>Kerala</a>
+    <a href="#services"><small class="mono">03</small>Services</a>
+    <a href="#work"><small class="mono">04</small>Residences</a>
+    <a href="#quote"><small class="mono">05</small>Instant quote</a>
+  </nav>
+  <div class="menu__foot"><a href="tel:+919847000000">+91 98470 00000</a><a href="https://wa.me/919847000000">WhatsApp</a></div>
+</div>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero" aria-label="Introduction">
+  <div class="hero__frame" id="heroFrame">
+    <div class="hero__scenes">
+      <video class="hero__vid is-active" data-scene="dusk" muted loop playsinline preload="auto" poster="./assets/video/hero.jpg" data-src="./assets/video/hero.mp4" data-src-m="./assets/video/hero-m.mp4"></video>
+      <video class="hero__vid" data-scene="golden" muted loop playsinline preload="none" poster="./assets/video/golden.jpg" data-src="./assets/video/golden.mp4"></video>
+      <video class="hero__vid" data-scene="monsoon" muted loop playsinline preload="none" poster="./assets/video/monsoon.jpg" data-src="./assets/video/monsoon.mp4"></video>
+      <div class="hero__mist" id="heroMist"></div>
+      <canvas class="hero__rain" id="heroRain"></canvas>
+    </div>
+    <div class="hero__shade"></div>
+
+    <div class="hero__top">
+      <span class="chip-glass mono"><i class="pulse"></i>Now building · 31 homes across Kerala</span>
+      <div class="badge-spin" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><text><textPath href="#circ">TURNKEY · MONSOON-GRADE · SINCE 2011 · </textPath></text></svg>
+        <span lang="ml">വീട്</span>
+      </div>
+    </div>
+
+    <div class="hero__body">
+      <h1 class="hero__title" aria-label="Homes that outlive the monsoon.">
+        <span class="ln"><span>Homes that</span></span>
+        <span class="ln"><span><em>outlive</em> the</span></span>
+        <span class="ln"><span>monsoon.</span></span>
+      </h1>
+      <div class="hero__side">
+        <p class="hero__lede">Luxury turnkey villas, designed and built across Kerala by one accountable team — at a price locked line-by-line before the first brick.</p>
+        <div class="hero__cta">
+          <a href="#quote" class="btn btn--light magnetic" data-cursor="Start"><span>Get your estimate</span><i class="btn__ico"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></i></a>
+          <a href="#work" class="btn btn--glass"><span>See residences</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__bar">
+      <div class="scene-toggle" role="tablist" aria-label="Change scene">
+        <button role="tab" class="is-active" data-scene="dusk" aria-selected="true"><b>Dusk</b><small class="mono">Kakkanad · 27°C</small></button>
+        <button role="tab" data-scene="golden" aria-selected="false"><b>Golden hour</b><small class="mono">Thrissur · 31°C</small></button>
+        <button role="tab" data-scene="monsoon" aria-selected="false"><b>Monsoon</b><small class="mono">Wayanad · 312 mm</small></button>
+        <span class="scene-toggle__ink" aria-hidden="true"></span>
+      </div>
+      <div class="hero__facts mono">
+        <span><b>212</b> homes handed over</span>
+        <span><b>4.9★</b> 186 reviews</span>
+        <span><b>10-yr</b> structural warranty</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLACES MARQUEE ================= -->
+<div class="places" aria-hidden="true">
+  <div class="places__track">
+    <span>Kochi</span><i>✦</i><span>Thrissur</span><i>✦</i><span>Kozhikode</span><i>✦</i><span>Kottayam</span><i>✦</i><span>Thiruvananthapuram</span><i>✦</i><span>Alappuzha</span><i>✦</i><span>Kannur</span><i>✦</i><span>Wayanad</span><i>✦</i><span>Munnar</span><i>✦</i>
+    <span>Kochi</span><i>✦</i><span>Thrissur</span><i>✦</i><span>Kozhikode</span><i>✦</i><span>Kottayam</span><i>✦</i><span>Thiruvananthapuram</span><i>✦</i><span>Alappuzha</span><i>✦</i><span>Kannur</span><i>✦</i><span>Wayanad</span><i>✦</i><span>Munnar</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ================= MANIFESTO ================= -->
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <p class="eyebrow"><span>01</span>The Latera standard</p>
+    <p class="manifesto__text" id="manifestoText">
+      We build homes that Kerala's
+      <span class="pill-vid" aria-hidden="true"><video src="./assets/video/river.mp4" muted loop playsinline autoplay preload="none"></video></span>
+      rain, heat and humidity can't touch — engineered like a bridge, finished like a
+      <span class="pill-vid" aria-hidden="true"><video src="./assets/video/interior.mp4" muted loop playsinline autoplay preload="none"></video></span>
+      five-star suite, and priced to the rupee before we break ground.
+    </p>
+
+    <div class="bento">
+      <article class="tile tile--emerald tile--big">
+        <video class="tile__bg" src="./assets/video/paddy.mp4" muted loop playsinline autoplay preload="none" poster="./assets/video/paddy.jpg"></video>
+        <span class="tile__k mono">Homes handed over</span>
+        <strong class="tile__n"><span data-count="212">0</span></strong>
+        <p>Villas, family homes and tharavad restorations — from Kasaragod to Kovalam — every one with keys, drawings and a warranty.</p>
+      </article>
+      <article class="tile tile--laterite">
+        <span class="tile__k mono">Districts</span>
+        <strong class="tile__n"><span data-count="14">0</span><small>/14</small></strong>
+        <p>Local approvals handled in every panchayat and corporation.</p>
+      </article>
+      <article class="tile tile--turmeric">
+        <span class="tile__k mono">On-time handover</span>
+        <strong class="tile__n"><span data-count="97">0</span><small>%</small></strong>
+        <p>Delivered on or before the contract date.</p>
+      </article>
+      <article class="tile tile--paper">
+        <span class="tile__k mono">BOQ vs final bill</span>
+        <strong class="tile__n"><span data-count="2.8" data-dec="1">0</span><small>%</small></strong>
+        <p>Average variance, 2019–2026. Industry norm: 18–25%.</p>
+      </article>
+      <article class="tile tile--sky">
+        <span class="tile__k mono">Structural warranty</span>
+        <strong class="tile__n"><span data-count="10">0</span><small>yrs</small></strong>
+        <p>In writing, with a named engineer who picks up.</p>
+      </article>
+      <article class="tile tile--ink">
+        <div class="tile__copy">
+          <span class="tile__k mono">For NRI owners</span>
+          <strong class="tile__n tile__n--sm">Every Friday,<br><em>a site film.</em></strong>
+          <p>Drone + walkthrough + payment status, straight to WhatsApp — Dubai, Doha, London or Toronto.</p>
+        </div>
+        <div class="tile__media"><video src="./assets/video/stair.mp4" poster="./assets/video/stair.jpg" muted loop playsinline preload="none"></video><span class="tile__rec mono"><i></i>Site film · Week 19</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS (3D) ================= -->
+<section class="process" id="process" aria-label="The Latera Method">
+  <div class="process__pin" id="processPin">
+    <div class="process__stage" id="processStage">
+      <div class="process__labels" id="processLabels"></div>
+      <img class="process__fallback" src="./assets/img/villa-dusk.jpg" alt="Finished contemporary villa at dusk" loading="lazy">
+    </div>
+
+    <div class="process__ui">
+      <div class="process__head">
+        <p class="eyebrow"><span>02</span>The Latera Method</p>
+        <h2 class="h2">From a line<br>on paper to <em>keys</em><br>in your hand.</h2>
+      </div>
+
+      <div class="pcard" id="pcard">
+        <div class="pcard__num"><span id="pNum">01</span><small>/06</small></div>
+        <div class="pcard__body">
+          <p class="mono pcard__wk" id="pWk">Week 1–2</p>
+          <h3 id="pTitle">Survey &amp; drawings</h3>
+          <p id="pDesc">Total-station survey, soil test and a KMBR-compliant drawing set — signed off by you before anything is priced.</p>
+          <ul class="pcard__chips" id="pChips"><li>Soil SBC test</li><li>3D walkthrough</li><li>Vasthu review</li></ul>
+        </div>
+        <img class="pcard__img" id="pImg" src="./assets/img/villa-dusk-lines.jpg" alt="">
+      </div>
+
+      <div class="ptimeline" id="ptimeline" aria-hidden="true">
+        <div class="ptimeline__bar"><span id="pBar"></span></div>
+        <ol>
+          <li>Drawings</li><li>Plinth</li><li>Frame</li><li>Masonry</li><li>Roof</li><li>Handover</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="process__hud mono" aria-hidden="true">
+      <span>Villa type L-2 · 4,200 sq ft · Kakkanad</span>
+      <span><b id="pPct">00</b>% built</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KERALA ================= -->
+<section class="kerala" id="kerala">
+  <div class="wrap kerala__grid">
+    <div class="kerala__map" id="keralaMap">
+      <svg id="keralaSvg" role="img" aria-label="Map of Kerala's 14 districts with Latera projects"></svg>
+      <div class="kerala__tip" id="keralaTip" aria-live="polite"></div>
+      <p class="kerala__legend mono"><i class="dot dot--live"></i>Live sites <i class="dot dot--done"></i>Handed over</p>
+    </div>
+    <div class="kerala__copy">
+      <p class="eyebrow"><span>03</span>Rooted in Kerala</p>
+      <h2 class="h2">Fourteen districts.<br><em>One</em> standard.</h2>
+      <p class="lede">From laterite country in Kannur to the backwaters of Kuttanad, every soil, slope and panchayat rule is different. Ours is a local crew in every district — with one engineering standard behind all of them.</p>
+      <div class="kerala__panel" id="keralaPanel">
+        <p class="mono" id="kpLabel">Tap a district</p>
+        <h3 id="kpName">Ernakulam</h3>
+        <dl>
+          <div><dt>Homes built</dt><dd id="kpHomes">48</dd></div>
+          <div><dt>Live sites</dt><dd id="kpLive">7</dd></div>
+          <div><dt>Avg. permit time</dt><dd id="kpPermit">34 days</dd></div>
+        </dl>
+        <p class="kerala__note" id="kpNote">Coastal clay & high water table — raft or pile foundations specified after SPT.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="monsoon" id="monsoon">
+      <video class="monsoon__bg" src="./assets/video/monsoon.mp4" muted loop playsinline preload="none" poster="./assets/video/monsoon.jpg"></video>
+      <div class="monsoon__shade"></div>
+      <div class="monsoon__head">
+        <span class="monsoon__ml" lang="ml">മഴ</span>
+        <h3>Engineered for <em>3,000 mm</em> of rain a year.</h3>
+      </div>
+      <ul class="monsoon__specs">
+        <li><b class="mono">01</b><strong>Plinth sealed in three layers</strong><span>Crystalline admixture, membrane and anti-termite barrier — standard, never an upsell.</span></li>
+        <li><b class="mono">02</b><strong>Roofs pitched at 30°</strong><span>Clay tile over a 1:40 graded slab. Water leaves in seconds, not hours.</span></li>
+        <li><b class="mono">03</b><strong>1.2 m overhangs</strong><span>Walls stay dry in driving rain and shaded in April heat.</span></li>
+        <li><b class="mono">04</b><strong>Breathing laterite walls</strong><span>No damp patches, no peeling paint — two monsoons in, guaranteed.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES (stacking) ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span>04</span>What we build</p>
+      <h2 class="h2">Five disciplines,<br><em>one</em> signature.</h2>
+    </div>
+    <div class="stack" id="stack">
+      <article class="scard scard--paper">
+        <div class="scard__copy">
+          <span class="scard__n mono">01 / Turnkey villas</span>
+          <h3>Land in.<br><em>Keys out.</em></h3>
+          <p>Architecture, approvals, structure, interiors, pool and landscape — one contract, one BOQ, one engineer who answers your call.</p>
+          <ul><li>2,500–12,000 sq ft</li><li>12–18 months</li><li>From ₹2,350 / sq ft</li></ul>
+        </div>
+        <div class="scard__media"><video src="./assets/video/lappool.mp4" poster="./assets/video/lappool.jpg" muted loop playsinline preload="none"></video></div>
+      </article>
+      <article class="scard scard--emerald">
+        <div class="scard__copy">
+          <span class="scard__n mono">02 / Custom homes</span>
+          <h3>Your plot,<br><em>your plan.</em></h3>
+          <p>Contemporary, colonial or nalukettu-inspired family homes — sized to your land, your family and your budget, with Vasthu built in.</p>
+          <ul><li>1,200–3,500 sq ft</li><li>9–14 months</li><li>From ₹1,850 / sq ft</li></ul>
+        </div>
+        <div class="scard__media"><img src="./assets/img/villa-wood.jpg" alt="Tropical home with timber roof and lap pool" loading="lazy"></div>
+      </article>
+      <article class="scard scard--laterite">
+        <div class="scard__copy">
+          <span class="scard__n mono">03 / Tharavad restoration</span>
+          <h3>Old bones,<br><em>new life.</em></h3>
+          <p>Restoring ancestral homes with matched laterite, re-pegged teak and modern plumbing hidden in the walls — heritage kept, leaks gone.</p>
+          <ul><li>Structural audit first</li><li>Teak &amp; tile matched</li><li>Heritage-sensitive</li></ul>
+        </div>
+        <div class="scard__media"><img src="./assets/img/house-lake.jpg" alt="Traditional Kerala home beside the backwaters" loading="lazy"></div>
+      </article>
+      <article class="scard scard--ink">
+        <div class="scard__copy">
+          <span class="scard__n mono">04 / Interiors &amp; joinery</span>
+          <h3>Finished like<br><em>a suite.</em></h3>
+          <p>Teak, terrazzo, lime plaster and brass — made in our own carpentry workshop in Perumbavoor, fitted by the same hands.</p>
+          <ul><li>In-house workshop</li><li>Modular + bespoke</li><li>Lighting design</li></ul>
+        </div>
+        <div class="scard__media"><video src="./assets/video/interior.mp4" poster="./assets/video/interior.jpg" muted loop playsinline preload="none"></video></div>
+      </article>
+      <article class="scard scard--turmeric">
+        <div class="scard__copy">
+          <span class="scard__n mono">05 / Commercial &amp; resorts</span>
+          <h3>Built to<br><em>host.</em></h3>
+          <p>Boutique resorts, homestays, clinics and showrooms — design-build with MEPF coordinated from day one and a hard opening date.</p>
+          <ul><li>Up to 40,000 sq ft</li><li>Design-build</li><li>Hospitality-grade</li></ul>
+        </div>
+        <div class="scard__media"><video src="./assets/video/infinity.mp4" poster="./assets/video/infinity.jpg" muted loop playsinline preload="none"></video></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK (curved carousel) ================= -->
+<section class="work" id="work" aria-label="Selected residences">
+  <div class="work__pin" id="workPin">
+    <div class="work__head">
+      <p class="eyebrow"><span>05</span>Selected residences</p>
+      <h2 class="h2 h2--center">Homes that have seen<br><em>ten</em> monsoons.</h2>
+    </div>
+    <div class="arc" id="arc" data-cursor="Drag">
+      <div class="arc__track" id="arcTrack">
+        <figure class="arc__card"><video src="./assets/video/hero.mp4" poster="./assets/video/hero.jpg" muted loop playsinline preload="none"></video><figcaption><b>The Monsoon House</b><span class="mono">Kakkanad · 4,800 sq ft · 2024</span></figcaption></figure>
+        <figure class="arc__card"><img src="./assets/img/villa-green.jpg" alt="" loading="lazy"><figcaption><b>Palm Court Villa</b><span class="mono">Kozhikode · 3,600 sq ft · 2023</span></figcaption></figure>
+        <figure class="arc__card"><video src="./assets/video/golden.mp4" poster="./assets/video/golden.jpg" muted loop playsinline preload="none"></video><figcaption><b>Golden Field House</b><span class="mono">Thrissur · 5,200 sq ft · 2025</span></figcaption></figure>
+        <figure class="arc__card"><img src="./assets/img/int-view.jpg" alt="" loading="lazy"><figcaption><b>Hill View Retreat</b><span class="mono">Munnar · 3,100 sq ft · 2024</span></figcaption></figure>
+        <figure class="arc__card"><video src="./assets/video/hillside.mp4" poster="./assets/video/hillside.jpg" muted loop playsinline preload="none"></video><figcaption><b>Ridge Villa</b><span class="mono">Wayanad · 4,400 sq ft · 2025</span></figcaption></figure>
+        <figure class="arc__card"><img src="./assets/img/villa-dusk.jpg" alt="" loading="lazy"><figcaption><b>Cantilever House</b><span class="mono">Kottayam · 3,900 sq ft · 2025</span></figcaption></figure>
+        <figure class="arc__card"><img src="./assets/img/house-lake.jpg" alt="" loading="lazy"><figcaption><b>Backwater Residence</b><span class="mono">Kumarakom · 5,600 sq ft · 2022</span></figcaption></figure>
+        <figure class="arc__card"><video src="./assets/video/infinity.mp4" poster="./assets/video/infinity.jpg" muted loop playsinline preload="none"></video><figcaption><b>Edge Pool Villa</b><span class="mono">Kovalam · 6,100 sq ft · 2026</span></figcaption></figure>
+        <figure class="arc__card"><img src="./assets/img/int-rustic.jpg" alt="" loading="lazy"><figcaption><b>Teak Pavilion</b><span class="mono">Kannur · 2,900 sq ft · 2023</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="work__foot">
+      <p class="mono" id="arcCount">01 / 09</p>
+      <p class="work__caption"><b id="arcName">The Monsoon House</b><span class="mono" id="arcMeta">Kakkanad · 4,800 sq ft · 2024</span></p>
+      <a href="#quote" class="btn btn--ink btn--sm"><span>Start yours</span><i class="btn__ico"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARE ================= -->
+<section class="eng" id="engineering">
+  <div class="wrap eng__grid">
+    <div class="eng__copy">
+      <p class="eyebrow"><span>06</span>Drawing = building</p>
+      <h2 class="h2">What you sign<br>is <em>exactly</em><br>what we build.</h2>
+      <p class="lede">Every line on a Latera drawing becomes the building — to the millimetre, the material and the rupee. Drag to compare the drawing set with the home it produced.</p>
+      <div class="eng__stats">
+        <div><strong>38</strong><span class="mono">page line-item BOQ</span></div>
+        <div><strong>11</strong><span class="mono">verified payment milestones</span></div>
+        <div><strong>0</strong><span class="mono">surprise invoices</span></div>
+      </div>
+    </div>
+    <div class="compare" id="compare" data-cursor="Drag">
+      <img class="compare__img" src="./assets/img/villa-dusk.jpg" alt="Completed villa at dusk" loading="lazy">
+      <div class="compare__draw">
+        <img class="compare__img compare__lines" src="./assets/img/villa-dusk-lines.jpg" alt="" loading="lazy">
+        <div class="compare__grid"></div>
+        <span class="compare__note mono" style="--x:18%;--y:22%">FFL +7.40</span>
+        <span class="compare__note mono" style="--x:52%;--y:44%">CANTILEVER 2.4 M</span>
+        <span class="compare__note mono" style="--x:20%;--y:78%">PLINTH +0.60</span>
+        <span class="compare__tag mono">Drawing set · Rev C</span>
+      </div>
+      <span class="compare__tag compare__tag--r mono">Handed over · 2025</span>
+      <div class="compare__handle"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></span></div>
+      <input class="compare__range" id="compareRange" type="range" min="0" max="100" value="50" aria-label="Compare drawing and built home">
+    </div>
+  </div>
+</section>
+
+<!-- ================= VOICES ================= -->
+<section class="voices" id="voices" aria-label="Client stories">
+  <div class="wrap">
+    <div class="voices__top">
+      <p class="eyebrow"><span>07</span>Owners, in their words</p>
+      <div class="rating"><strong>4.9</strong><span><i>★★★★★</i><small class="mono">186 Google reviews</small></span></div>
+    </div>
+    <div class="quotes" id="quotes">
+      <figure class="quote is-active">
+        <img class="quote__img" src="./assets/img/villa-dusk.jpg" alt="" loading="lazy">
+        <blockquote>“We live in Dubai. Every Friday a site film landed on WhatsApp. We visited twice in fourteen months — and the house was <em>exactly</em> the drawing.”</blockquote>
+        <figcaption><span class="av" style="--c:var(--emerald)">AR</span><span><b>Anitha &amp; Rajeev Menon</b><small class="mono">NRI owners · Thrissur · 4,200 sq ft</small></span></figcaption>
+      </figure>
+      <figure class="quote">
+        <img class="quote__img" src="./assets/img/villa-pool.jpg" alt="" loading="lazy">
+        <blockquote>“The BOQ was 38 pages. The final bill was within ₹1.1 lakh of it. In twenty years of business I have <em>never</em> seen that.”</blockquote>
+        <figcaption><span class="av" style="--c:var(--laterite)">FK</span><span><b>Dr. Faisal Koya</b><small class="mono">Villa owner · Kozhikode · 5,600 sq ft</small></span></figcaption>
+      </figure>
+      <figure class="quote">
+        <img class="quote__img" src="./assets/img/house-lake.jpg" alt="" loading="lazy">
+        <blockquote>“Two monsoons in and not one damp patch. Our old tharavad leaked from the <em>first week of June.</em>”</blockquote>
+        <figcaption><span class="av" style="--c:var(--turmeric)">TV</span><span><b>Thomas Varghese</b><small class="mono">Tharavad restoration · Kottayam</small></span></figcaption>
+      </figure>
+      <figure class="quote">
+        <img class="quote__img" src="./assets/img/villa-garden.jpg" alt="" loading="lazy">
+        <blockquote>“They told us what <em>not</em> to build. That honesty saved us twelve lakhs and a year.”</blockquote>
+        <figcaption><span class="av" style="--c:var(--ink)">LN</span><span><b>Lakshmi Nair</b><small class="mono">Custom home · Kochi · 2,400 sq ft</small></span></figcaption>
+      </figure>
+      <div class="quotes__nav" role="tablist" aria-label="Choose a story">
+        <button role="tab" class="is-active" aria-label="Story 1"><i></i></button>
+        <button role="tab" aria-label="Story 2"><i></i></button>
+        <button role="tab" aria-label="Story 3"><i></i></button>
+        <button role="tab" aria-label="Story 4"><i></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESTIMATOR ================= -->
+<section class="quote-sec" id="quote">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div>
+        <p class="eyebrow"><span>08</span>Instant estimate</p>
+        <h2 class="h2">Price your home<br>in <em>sixty</em> seconds.</h2>
+      </div>
+      <p class="lede">Four quick steps, a live itemised range built from 212 real Latera BOQs — then a senior engineer calls within 24 hours to firm it up. No obligation. No spam. Ever.</p>
+    </div>
+
+    <div class="est">
+      <form class="est__form" id="estForm" novalidate>
+        <div class="est__steps" role="tablist" aria-label="Estimate steps">
+          <button type="button" class="est__step is-active" data-goto="0" role="tab" aria-selected="true"><i>1</i><span>Project</span></button>
+          <button type="button" class="est__step" data-goto="1" role="tab" aria-selected="false"><i>2</i><span>Scale</span></button>
+          <button type="button" class="est__step" data-goto="2" role="tab" aria-selected="false"><i>3</i><span>Site</span></button>
+          <button type="button" class="est__step" data-goto="3" role="tab" aria-selected="false"><i>4</i><span>Contact</span></button>
+          <span class="est__ink" id="estInk" aria-hidden="true"></span>
+        </div>
+
+        <div class="est__panels">
+          <fieldset class="est__panel is-active" data-step="0">
+            <legend class="q">What are we building?</legend>
+            <div class="tiles">
+              <label class="opt"><input type="radio" name="type" value="villa" checked><span class="opt__in"><img src="./assets/img/villa-pool.jpg" alt=""><b>Luxury villa</b><small>Turnkey</small></span></label>
+              <label class="opt"><input type="radio" name="type" value="home"><span class="opt__in"><img src="./assets/img/villa-wood.jpg" alt=""><b>Family home</b><small>Custom build</small></span></label>
+              <label class="opt"><input type="radio" name="type" value="renovation"><span class="opt__in"><img src="./assets/img/house-lake.jpg" alt=""><b>Restoration</b><small>Renovate · extend</small></span></label>
+              <label class="opt"><input type="radio" name="type" value="commercial"><span class="opt__in"><img src="./assets/img/villa-green.jpg" alt=""><b>Resort / commercial</b><small>Design-build</small></span></label>
+              <label class="opt"><input type="radio" name="type" value="interiors"><span class="opt__in"><img src="./assets/img/int-kitchen.jpg" alt=""><b>Interiors</b><small>Fit-out only</small></span></label>
+            </div>
+            <p class="q q--sm">Where are you today?</p>
+            <div class="chips" role="radiogroup" aria-label="Current stage">
+              <label class="chip"><input type="radio" name="stage" value="Have land" checked><span>I have land</span></label>
+              <label class="chip"><input type="radio" name="stage" value="Have drawings"><span>I have drawings</span></label>
+              <label class="chip"><input type="radio" name="stage" value="Need drawings & approvals"><span>Need drawings &amp; approvals</span></label>
+              <label class="chip"><input type="radio" name="stage" value="Construction already started"><span>Construction started</span></label>
+              <label class="chip"><input type="radio" name="stage" value="Still looking for land"><span>Still looking for land</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="est__panel" data-step="1">
+            <legend class="q">How big, and how fine?</legend>
+            <div class="area">
+              <div class="area__top">
+                <label for="area" class="mono">Built-up area</label>
+                <div class="area__val"><input type="number" id="areaNum" min="500" max="12000" step="50" value="2400" aria-label="Built-up area in square feet"><span class="mono">sq ft</span></div>
+              </div>
+              <input type="range" id="area" min="500" max="12000" step="50" value="2400">
+              <div class="area__scale mono" aria-hidden="true"><span>500</span><span>3k</span><span>6k</span><span>9k</span><span>12k</span></div>
+            </div>
+            <p class="q q--sm">Floors</p>
+            <div class="seg" role="radiogroup" aria-label="Floors">
+              <label><input type="radio" name="floors" value="g"><span>Ground</span></label>
+              <label><input type="radio" name="floors" value="g1" checked><span>G + 1</span></label>
+              <label><input type="radio" name="floors" value="g2"><span>G + 2</span></label>
+              <label><input type="radio" name="floors" value="g3"><span>G + 3</span></label>
+            </div>
+            <p class="q q--sm">Finish level</p>
+            <div class="tiers">
+              <label class="tier"><input type="radio" name="tier" value="essential"><span class="tier__in"><b>Essential</b><span class="mono">₹1,850–2,150 / sq ft</span><small>Vitrified tiles, uPVC windows, standard fittings, modular kitchen shell.</small></span></label>
+              <label class="tier"><input type="radio" name="tier" value="signature" checked><span class="tier__in"><em class="mono">Most chosen</em><b>Signature</b><span class="mono">₹2,350–2,850 / sq ft</span><small>Italian-finish tiles, teak main door, aluminium glazing, premium fittings.</small></span></label>
+              <label class="tier"><input type="radio" name="tier" value="bespoke"><span class="tier__in"><b>Bespoke</b><span class="mono">₹3,200–4,200 / sq ft</span><small>Natural stone, solid teak joinery, automation, pool &amp; landscape.</small></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="est__panel" data-step="2">
+            <legend class="q">Where's the site?</legend>
+            <div class="fields">
+              <div class="field">
+                <label for="district" class="mono">District</label>
+                <div class="select"><select id="district">
+                  <option>Thiruvananthapuram</option><option>Kollam</option><option>Pathanamthitta</option><option>Alappuzha</option>
+                  <option>Kottayam</option><option>Idukki</option><option selected>Ernakulam</option><option>Thrissur</option>
+                  <option>Palakkad</option><option>Malappuram</option><option>Kozhikode</option><option>Wayanad</option>
+                  <option>Kannur</option><option>Kasaragod</option><option>Outside Kerala</option>
+                </select></div>
+              </div>
+              <div class="field">
+                <label for="locality" class="mono">Locality <small>optional</small></label>
+                <input id="locality" type="text" placeholder="e.g. Kakkanad" autocomplete="address-level2">
+              </div>
+            </div>
+            <p class="q q--sm">When would you like to start?</p>
+            <div class="chips" role="radiogroup" aria-label="Start timeline">
+              <label class="chip"><input type="radio" name="timeline" value="Within 3 months"><span>Within 3 months</span></label>
+              <label class="chip"><input type="radio" name="timeline" value="3–6 months" checked><span>3–6 months</span></label>
+              <label class="chip"><input type="radio" name="timeline" value="6–12 months"><span>6–12 months</span></label>
+              <label class="chip"><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label>
+            </div>
+            <label class="toggle"><input type="checkbox" id="nri"><span class="toggle__ui" aria-hidden="true"></span><span><b>I live outside India</b><small>We'll set up weekly site films and video walkthroughs.</small></span></label>
+          </fieldset>
+
+          <fieldset class="est__panel" data-step="3">
+            <legend class="q">Where should we send it?</legend>
+            <div class="fields">
+              <div class="field"><label for="name" class="mono">Full name</label><input id="name" type="text" autocomplete="name" placeholder="Your name"><span class="field__err" aria-live="polite"></span></div>
+              <div class="field"><label for="phone" class="mono">Phone / WhatsApp</label><div class="phone"><span class="mono">+91</span><input id="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="98470 00000" maxlength="11"></div><span class="field__err" aria-live="polite"></span></div>
+              <div class="field field--full"><label for="email" class="mono">Email <small>optional</small></label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"><span class="field__err" aria-live="polite"></span></div>
+              <div class="field field--full"><label for="notes" class="mono">Anything we should know? <small>optional</small></label><textarea id="notes" rows="3" placeholder="Plot size, a style you love, a deadline…"></textarea></div>
+            </div>
+            <label class="toggle"><input type="checkbox" id="wa" checked><span class="toggle__ui" aria-hidden="true"></span><span><b>Send my estimate on WhatsApp</b><small>One message from a named engineer. Never marketing.</small></span></label>
+          </fieldset>
+        </div>
+
+        <div class="est__nav">
+          <button type="button" class="btn btn--ghost" id="estBack" disabled><span>Back</span></button>
+          <span class="est__mini mono" id="estMini">₹—</span>
+          <button type="button" class="btn btn--ink magnetic" id="estNext"><span>Continue</span><i class="btn__ico"><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></i></button>
+        </div>
+
+        <div class="est__done" id="estDone" hidden>
+          <svg class="tick" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30"/><path d="M19 33l9 9 18-19"/></svg>
+          <p class="mono" id="doneRef">REF · LTR-0000</p>
+          <h3>Your estimate is locked in, <span id="doneName">friend</span>.</h3>
+          <p>A senior engineer will call within 24 hours to walk you through the range and book a free site visit.</p>
+          <div class="est__done-cta">
+            <a class="btn btn--laterite" id="doneWa" href="#" target="_blank" rel="noopener"><span>Continue on WhatsApp</span><i class="btn__ico"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></i></a>
+            <button type="button" class="btn btn--ghost-light" id="estReset"><span>New estimate</span></button>
+          </div>
+        </div>
+      </form>
+
+      <aside class="sheet" aria-label="Live estimate">
+        <div class="sheet__head"><span class="mono">Latera · estimate sheet</span><span class="mono" id="sheetDate">--</span></div>
+        <div class="sheet__range" aria-live="polite">
+          <span class="mono">Indicative project cost</span>
+          <strong id="sheetRange">₹— – ₹—</strong>
+          <div class="sheet__bar"><span id="sheetBar"></span></div>
+        </div>
+        <dl class="sheet__rows">
+          <div><dt>Project</dt><dd id="sType">Luxury villa</dd></div>
+          <div><dt>Built-up area</dt><dd id="sArea">2,400 sq ft</dd></div>
+          <div><dt>Floors</dt><dd id="sFloors">G + 1</dd></div>
+          <div><dt>Finish</dt><dd id="sTier">Signature</dd></div>
+          <div><dt>Rate band</dt><dd id="sRate">₹2,350–2,850</dd></div>
+          <div><dt>District</dt><dd id="sDistrict">Ernakulam</dd></div>
+          <div><dt>Build time</dt><dd id="sTime">12–14 months</dd></div>
+        </dl>
+        <div class="sheet__split">
+          <p class="mono">Where the money goes</p>
+          <div class="split"><span style="--w:34%;--c:var(--emerald)"></span><span style="--w:26%;--c:var(--laterite)"></span><span style="--w:22%;--c:var(--turmeric)"></span><span style="--w:18%;--c:#c9c1b3"></span></div>
+          <ul class="split__legend mono">
+            <li><i style="--c:var(--emerald)"></i>Structure 34%</li><li><i style="--c:var(--laterite)"></i>Masonry &amp; roof 26%</li>
+            <li><i style="--c:var(--turmeric)"></i>Finishes 22%</li><li><i style="--c:#c9c1b3"></i>MEP &amp; approvals 18%</li>
+          </ul>
+        </div>
+        <p class="sheet__fine">Indicative range from Latera's 2024–26 BOQ data. Excludes land, compound wall and loose furniture. Your fixed price is issued as a line-item BOQ after a free site visit.</p>
+        <div class="sheet__stamp mono" aria-hidden="true">BOQ<br>LOCKED</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap faq__grid">
+    <div>
+      <p class="eyebrow"><span>09</span>Before you commit</p>
+      <h2 class="h2">Straight<br><em>answers.</em></h2>
+      <a href="https://wa.me/919847000000" class="faq__wa" target="_blank" rel="noopener"><span class="av" style="--c:var(--emerald)">SK</span><span><b>Still curious?</b><small>Ask Sreekanth, our chief engineer, on WhatsApp</small></span></a>
+    </div>
+    <div class="acc" id="acc">
+      <div class="acc__item"><button class="acc__q" aria-expanded="false"><span>Is the online estimate the final price?</span><i aria-hidden="true"></i></button><div class="acc__a"><div><p>No — it's an honest range drawn from our own BOQs. After a free site visit and soil test we issue a line-item BOQ. That becomes the contract price, and nothing changes without your signature.</p></div></div></div>
+      <div class="acc__item"><button class="acc__q" aria-expanded="false"><span>Do you handle panchayat and municipal approvals?</span><i aria-hidden="true"></i></button><div class="acc__a"><div><p>Yes. KMBR / KPBR-compliant drawings, building permit, occupancy certificate, KSEB and water connections are all part of a turnkey contract. You sign; we queue.</p></div></div></div>
+      <div class="acc__item"><button class="acc__q" aria-expanded="false"><span>How are payments structured?</span><i aria-hidden="true"></i></button><div class="acc__a"><div><p>Against 11 verified milestones — plinth, each slab, masonry, roof and so on. You pay only after a milestone is photographed, measured and signed off by your site engineer.</p></div></div></div>
+      <div class="acc__item"><button class="acc__q" aria-expanded="false"><span>I live abroad. How will I follow the build?</span><i aria-hidden="true"></i></button><div class="acc__a"><div><p>A weekly drone-and-walkthrough film, a live dashboard of milestones and payments, and a video call at every stage. More than half our owners are in the Gulf, UK or North America.</p></div></div></div>
+      <div class="acc__item"><button class="acc__q" aria-expanded="false"><span>What warranty do I get?</span><i aria-hidden="true"></i></button><div class="acc__a"><div><p>Ten years on structure, five on waterproofing and one on finishes — in writing, with a named engineer who picks up the phone.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__cta">
+      <p class="eyebrow"><span>10</span>Your turn</p>
+      <a href="#quote" class="foot__big" data-cursor="Quote"><span>Let's build</span><span><em>yours.</em><i class="foot__arrow"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8"/></svg></i></span></a>
+    </div>
+    <div class="foot__cols">
+      <div><p class="mono">Studio</p><p>Latera Builders<br>Seaport–Airport Road, Kakkanad<br>Kochi, Kerala 682030</p></div>
+      <div><p class="mono">Talk</p><p><a href="tel:+919847000000">+91 98470 00000</a><br><a href="mailto:build@latera.example">build@latera.example</a><br>Mon–Sat · 9:00–19:00 IST</p></div>
+      <div><p class="mono">Offices</p><p>Kochi · Kozhikode<br>Thiruvananthapuram<br>Dubai (client desk)</p></div>
+      <div><p class="mono">Credentials</p><p>Class-A Contractor, PWD Kerala<br>ISO 9001:2015 · IGBC member<br>RERA-ready documentation</p></div>
+    </div>
+  </div>
+  <div class="foot__word" aria-hidden="true">
+    <video src="./assets/video/paddy.mp4" muted loop playsinline preload="none"></video>
+    <span>Latera</span>
+  </div>
+  <div class="wrap foot__legal mono"><span>© 2026 Latera Builders — concept prototype</span><span lang="ml" class="ml">നന്ദി · thank you</span><a href="#top">Back to top ↑</a></div>
+</footer>
+
+<div class="dock" id="dock">
+  <a href="tel:+919847000000" aria-label="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+  <a href="https://wa.me/919847000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9.5c.3 2 2.2 4.2 4.6 5l1.4-1.4-2-1-1 1M9 9.5l1-1 1 2"/></svg></a>
+  <a href="#quote" class="dock__cta">Instant quote<i>→</i></a>
+</div>
+
+<script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
